@@ -5,12 +5,24 @@ dolmen.app.security
 `dolmen.app.security` is a package providing a collection of basic roles and
 permissions for a Dolmen application.
 
+  >>> import dolmen.app.security
+  >>> from dolmen.app.security import IDolmenSecurity
+  >>> from dolmen.app.security.roles import IDolmenRoles
+  >>> from dolmen.app.security.content import IContentPermissions
+  
+  >>> IDolmenSecurity.extends(IDolmenRoles)
+  True
+  >>> IDolmenSecurity.extends(IContentPermissions)
+  True
+
+  >>> IDolmenSecurity.providedBy(dolmen.app.security)
+  True
+
 
 Content centric permissions
 ===========================
 
   >>> import dolmen.app.security.content
-  >>> from dolmen.app.security import IContentPermissions
 
   >>> IContentPermissions.providedBy(dolmen.app.security.content)
   True
@@ -31,7 +43,6 @@ Dolmen application roles
 ========================
 
   >>> import dolmen.app.security.roles
-  >>> from dolmen.app.security import IDolmenRoles
 
   >>> IDolmenRoles.providedBy(dolmen.app.security.roles)
   True
