@@ -4,6 +4,8 @@ Changelog
 0.2 (unreleased)
 ----------------
 
+- Added dolmen.content.Delete permission to Owner and Contributor.
+
 - Added internationalized title for roles and permissions.
 
 

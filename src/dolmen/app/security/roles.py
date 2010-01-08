@@ -27,6 +27,7 @@ class Owner(grok.Role):
         'dolmen.content.Cut',
         'dolmen.content.Copy',
         'dolmen.content.Paste',
+        'dolmen.content.Delete',
         )
     
 
@@ -41,6 +42,7 @@ class Contributor(grok.Role):
         'dolmen.content.Cut',
         'dolmen.content.Copy',
         'dolmen.content.Paste',
+        'dolmen.content.Delete',
         )
 
 
