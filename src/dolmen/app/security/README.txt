@@ -27,16 +27,18 @@ Content centric permissions
   >>> IContentPermissions.providedBy(dolmen.app.security.content)
   True
 
-  >>> for name, attr in IContentPermissions.namesAndDescriptions():
+  >>> for name, attr in sorted(IContentPermissions.namesAndDescriptions()):
   ...   print "%s: %s" % (name, attr.getDoc())
-  CanEditContent: Edit content.
-  CanAddContent: Add content.
-  CanListContent: List the container content.
-  CanDeleteContent: Delete content.
-  CanReviewContent: Review and annotate content.
-  CanCopyContent: Copy content to the clipboard.
-  CanPasteContent: Paste content from the clipboard.
-  CanViewContent: View content.
+  CanAddContent: Add content
+  CanCopyContent: Copy content to the clipboard
+  CanCutContent: Cut content to the clipboard
+  CanDeleteContent: Delete content
+  CanEditContent: Edit content
+  CanListContent: List the container content
+  CanPasteContent: Paste content from the clipboard
+  CanReviewContent: Review and annotate content
+  CanViewContent: View content
+
 
 
 Dolmen application roles
@@ -47,9 +49,9 @@ Dolmen application roles
   >>> IDolmenRoles.providedBy(dolmen.app.security.roles)
   True
 
-  >>> for name, attr in IDolmenRoles.namesAndDescriptions():
+  >>> for name, attr in sorted(IDolmenRoles.namesAndDescriptions()):
   ...   print "%s: %s" % (name, attr.getDoc())
-  Member: A basic member.
   Contributor: A content contributor.
+  Member: A basic member.
   Owner: The owner of an object.
   Reviewer: A content reviewer.
