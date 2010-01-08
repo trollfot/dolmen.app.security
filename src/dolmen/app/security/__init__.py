@@ -5,11 +5,11 @@ from zope.interface import moduleProvides
 
 mf = MessageFactory("dolmen.app.security")
 
-from content import *
-from content import IContentPermissions
+from dolmen.app.security.content import *
+from dolmen.app.security.content import IContentPermissions
 
-from roles import *
-from roles import IDolmenRoles
+from dolmen.app.security.roles import *
+from dolmen.app.security.roles import IDolmenRoles
 
 
 class IDolmenSecurity(IContentPermissions, IDolmenRoles):

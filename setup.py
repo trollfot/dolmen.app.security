@@ -9,6 +9,7 @@ history = open(join('docs', 'HISTORY.txt')).read()
 install_requires = [
     'setuptools',
     'grok >= 1.0',
+    'zope.i18nmessageid',
     'zope.interface',
     ]
 
