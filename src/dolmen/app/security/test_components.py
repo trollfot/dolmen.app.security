@@ -26,13 +26,12 @@ def iface_attrs(iface):
 
 def get_permissions(role):
     return components.permissions.bind().get(role)
-    
+
 
 def test_registered_roles():
-    
-    roles = set([str(role.__class__.__name__)
-                 for id, role in getUtilitiesFor(IRole)])
-    assert roles == iface_attrs(IDolmenRoles)
+    registered_roles = set([str(role.__class__.__name__)
+                            for id, role in getUtilitiesFor(IRole)])
+    assert registered_roles == iface_attrs(IDolmenRoles)
 
 
 def test_permissions_for_roles():
@@ -41,7 +40,7 @@ def test_permissions_for_roles():
         'dolmen.content.View',
         'dolmen.content.Copy',
         ]
-         
+
     assert get_permissions(roles.Reviewer) == [
         'dolmen.content.View',
         'dolmen.content.Edit',
@@ -67,10 +66,10 @@ def test_permissions_for_roles():
         'dolmen.content.Paste',
         'dolmen.content.Delete',
         ]
-    
+
 
 def test_registered_permissions():
 
-    perms = set([str(perm.__class__.__name__)
-                 for id, perm in getUtilitiesFor(IPermission)])
-    assert perms == iface_attrs(IContentPermissions)
+    registered_perms = set([str(perm.__class__.__name__)
+                            for id, perm in getUtilitiesFor(IPermission)])
+    assert registered_perms == iface_attrs(IContentPermissions)

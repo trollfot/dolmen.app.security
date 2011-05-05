@@ -5,7 +5,6 @@ from dolmen.security import components as security
 from zope.interface import Interface, Attribute, moduleProvides
 
 
-
 class Member(security.Role):
     security.name('dolmen.Member')
     security.title(_(u"Member"))
@@ -29,7 +28,7 @@ class Owner(security.Role):
         'dolmen.content.Paste',
         'dolmen.content.Delete',
         )
-    
+
 
 class Contributor(security.Role):
     security.name('dolmen.Contributor')
@@ -64,7 +63,7 @@ class IDolmenRoles(Interface):
     Member = Attribute("A basic member.")
     Reviewer = Attribute("A content reviewer.")
     Contributor = Attribute("A content contributor.")
-    
+
 
 moduleProvides(IDolmenRoles)
 __all__ = list(IDolmenRoles)

@@ -44,7 +44,7 @@ class CanPasteContent(security.Permission):
     security.name('dolmen.content.Paste')
     security.title(_(u"Paste content from the clipboard"))
 
-    
+
 class CanReviewContent(security.Permission):
     security.name('dolmen.control.Review')
     security.title(_(u"Review and annotate content"))
