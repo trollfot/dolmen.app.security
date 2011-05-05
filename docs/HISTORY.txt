@@ -1,10 +1,16 @@
 Changelog
 =========
 
-0.2 (unreleased)
-----------------
+2.0a1 (2011-05-05)
+------------------
 
-- Added dolmen.content.Delete permission to Owner and Contributor.
+- We no longer depend on `Grok` but on `dolmen.security.components`.
+
+- Tests now use `py.test`.
+
+- Module `content` has been renamed `permissions`.
+
+- Added 'dolmen.content.Delete' permission to Owner and Contributor.
 
 - Added internationalized title for roles and permissions.
 

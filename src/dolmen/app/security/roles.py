@@ -1,26 +1,26 @@
 # -*- coding: utf-8 -*-
 
-import grok
+from dolmen.app.security import mf as _
+from dolmen.security import components as security
 from zope.interface import Interface, Attribute, moduleProvides
 
-from dolmen.app.security import mf as _
 
 
-class Member(grok.Role):
-    grok.name('dolmen.Member')
-    grok.title(_(u"Member"))
-    grok.description(_(u"A basic member."))
-    grok.permissions(
+class Member(security.Role):
+    security.name('dolmen.Member')
+    security.title(_(u"Member"))
+    security.description(_(u"A basic member."))
+    security.permissions(
         'dolmen.content.View',
         'dolmen.content.Copy',
         )
 
 
-class Owner(grok.Role):
-    grok.name('dolmen.Owner')
-    grok.title(_(u"Owner"))
-    grok.description(_(u"The owner of an object."))
-    grok.permissions(
+class Owner(security.Role):
+    security.name('dolmen.Owner')
+    security.title(_(u"Owner"))
+    security.description(_(u"The owner of an object."))
+    security.permissions(
         'dolmen.content.Add',
         'dolmen.content.View',
         'dolmen.content.Edit',
@@ -31,11 +31,11 @@ class Owner(grok.Role):
         )
     
 
-class Contributor(grok.Role):
-    grok.name('dolmen.Contributor')
-    grok.title(_(u"Contributor"))
-    grok.description(_(u"A content contributor."))
-    grok.permissions(
+class Contributor(security.Role):
+    security.name('dolmen.Contributor')
+    security.title(_(u"Contributor"))
+    security.description(_(u"A content contributor."))
+    security.permissions(
         'dolmen.content.Add',
         'dolmen.content.View',
         'dolmen.content.Edit',
@@ -46,11 +46,11 @@ class Contributor(grok.Role):
         )
 
 
-class Reviewer(grok.Role):
-    grok.name('dolmen.Reviewer')
-    grok.title(_(u"Reviewer"))
-    grok.description(_(u"A content reviewer."))
-    grok.permissions(
+class Reviewer(security.Role):
+    security.name('dolmen.Reviewer')
+    security.title(_(u"Reviewer"))
+    security.description(_(u"A content reviewer."))
+    security.permissions(
         'dolmen.content.View',
         'dolmen.content.Edit',
         'dolmen.control.Review',
